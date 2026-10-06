@@ -3,42 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Thiệp Mời Khai Mạc Giải Bóng Đá THCS 915 Gia Sàng</title>
+  <title>Thiệp Mời Khai Mạc - Giải Bóng Đá THCS 915 Gia Sàng</title>
   <!-- Google Fonts & FontAwesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
+    /* BẢNG MÀU ĐẶC TRƯNG TRƯỜNG 915 GIA SÀNG */
     :root {
-      --primary: #0b3d20;
-      --primary-light: #166436;
-      --gold: #d4af37;
-      --gold-light: #f7e7a9;
-      --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-      --bg-cream: #faf8f5;
-      --text-dark: #22252a;
-      --text-muted: #555e68;
+      --school-teal-dark: #12333d;     /* Xanh đậm sang trọng */
+      --school-teal: #2f6b80;          /* Xanh lam tường trường */
+      --school-teal-light: #528fa5;    /* Xanh lam sáng */
+      --school-teal-soft: #edf5f8;     /* Xanh pastel lót nền thẻ */
+      --school-orange: #e68449;        /* Cam đặc trưng của dải tường */
+      --school-orange-deep: #cf682b;   /* Cam đậm viền & nút */
+      --school-gold: #f5b041;          /* Vàng tươi năng động */
+      --school-gold-light: #fbe6be;    /* Vàng nhạt điểm xuyết */
+      --gold-gradient: linear-gradient(135deg, #f5b041, #ffde82, #e68449);
+      --bg-warm: #faf7f2;              /* Trắng kem ấm thanh lịch */
+      --text-main: #1f2c33;
+      --text-sub: #54656f;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Montserrat', sans-serif;
-      background: #06170d;
-      color: var(--text-dark);
+      background: #0a1f26;
+      color: var(--text-main);
       display: flex;
       justify-content: center;
       min-height: 100vh;
       overflow-x: hidden;
     }
 
-    /* Màn hình điện thoại trung tâm */
     .wedding-wrapper {
       width: 100%;
       max-width: 480px;
-      background: var(--bg-cream);
-      box-shadow: 0 0 35px rgba(0,0,0,0.6);
+      background: var(--bg-warm);
+      box-shadow: 0 0 40px rgba(0,0,0,0.65);
       position: relative;
       overflow: hidden;
       min-height: 100vh;
@@ -52,71 +56,83 @@
       width: 100%;
       max-width: 480px;
       height: 100vh;
-      background: radial-gradient(circle at center, #134e2c, #061f11);
+      background: radial-gradient(circle at center, #1b4957 0%, #0e2b34 100%);
       z-index: 9999;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 24px;
       color: #fff;
       text-align: center;
-      transition: all 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+      transition: all 0.85s cubic-bezier(0.65, 0, 0.35, 1);
     }
     #envelope-screen.opened {
       transform: translateX(-50%) translateY(-100%);
       opacity: 0;
       pointer-events: none;
     }
+    /* Họa tiết đường chéo màu trường ở mép trên */
+    .env-stripe-deco {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--school-orange) 0%, var(--school-gold) 50%, var(--school-teal-light) 100%);
+    }
     .env-stamp {
-      width: 80px;
-      height: 80px;
-      border: 2px dashed var(--gold);
+      width: 86px;
+      height: 86px;
+      border: 2px dashed var(--school-gold);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 25px;
-      animation: pulse 2s infinite;
+      background: rgba(230, 132, 73, 0.12);
+      animation: envPulse 2.2s infinite;
     }
-    .env-stamp i { font-size: 34px; color: var(--gold); }
+    .env-stamp i { font-size: 38px; color: var(--school-gold); }
     .env-sub {
       font-size: 13px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: var(--gold-light);
+      color: var(--school-gold-light);
       margin-bottom: 12px;
+      font-weight: 600;
     }
     .env-title {
       font-family: 'Cinzel', serif;
       font-size: 24px;
-      line-height: 1.35;
+      line-height: 1.4;
       font-weight: 700;
       letter-spacing: 1px;
-      color: #fff;
+      color: #ffffff;
       margin-bottom: 20px;
     }
     .env-btn {
       background: var(--gold-gradient);
-      color: #2b1803;
+      color: #1a1a1a;
       border: none;
-      padding: 14px 34px;
+      padding: 15px 36px;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 2px;
-      border-radius: 30px;
+      border-radius: 35px;
       cursor: pointer;
-      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+      box-shadow: 0 8px 24px rgba(230, 132, 73, 0.45);
       margin-top: 30px;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      transition: transform 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-    .env-btn:hover { transform: scale(1.05); }
+    .env-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 28px rgba(245, 176, 65, 0.55);
+    }
 
-    /* NÚT BẬT/TẮT NHẠC NỀN */
+    /* NÚT ÂM THANH NỀN */
     .music-player {
       position: fixed;
       top: 20px;
@@ -125,743 +141,19 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: rgba(11, 61, 32, 0.85);
-      border: 1px solid var(--gold);
-      color: var(--gold);
+      background: rgba(18, 51, 61, 0.88);
+      border: 1.5px solid var(--school-gold);
+      color: var(--school-gold);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      backdrop-filter: blur(4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      backdrop-filter: blur(5px);
     }
     .music-spin { animation: spin 4s linear infinite; }
 
     /* SECTION 1: HERO COVER */
     .hero-section {
-      background: linear-gradient(180deg, rgba(11, 61, 32, 0.82) 0%, rgba(6, 23, 13, 0.95) 100%),
-                  url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80') center/cover;
-      color: #fff;
-      padding: 60px 24px 45px;
-      text-align: center;
-      border-bottom: 3px solid var(--gold);
-    }
-    .hero-top-badge {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .hero-organizer {
-      font-size: 13px;
-      font-weight: 600;
-      color: #c9e8d4;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 22px;
-    }
-    .hero-banner-title {
-      font-family: 'Cinzel', serif;
-      font-size: 25px;
-      line-height: 1.35;
-      font-weight: 800;
-      background: var(--gold-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 8px;
-    }
-    .hero-tournament-name {
-      font-size: 15px;
-      font-weight: 700;
-      color: #ffffff;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 25px;
-    }
-    .hero-card-time {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      border-radius: 12px;
-      padding: 16px 20px;
-      backdrop-filter: blur(5px);
-      margin: 0 auto 25px;
-    }
-    .hero-card-time .time-val {
-      font-size: 16px;
-      font-weight: 700;
-      color: #fff;
-      letter-spacing: 1px;
-    }
-    .hero-card-time .date-val {
-      font-size: 14px;
-      color: var(--gold-light);
-      margin-top: 4px;
-    }
-
-    /* COUNTDOWN */
-    .countdown-timer {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 25px;
-    }
-    .cd-box {
-      background: rgba(0, 0, 0, 0.45);
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      border-radius: 10px;
-      padding: 8px 10px;
-      min-width: 62px;
-    }
-    .cd-num { font-size: 20px; font-weight: 800; color: var(--gold); }
-    .cd-label { font-size: 9px; text-transform: uppercase; color: #badfc6; margin-top: 2px; }
-
-    /* SECTION CHUNG */
-    .sec-block {
-      padding: 45px 24px;
-      position: relative;
-    }
-    .sec-header {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-    .sec-sub {
-      font-size: 11px;
-      letter-spacing: 3px;
-      color: #7b8c82;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-    .sec-title {
-      font-family: 'Cinzel', serif;
-      font-size: 21px;
-      color: var(--primary);
-      font-weight: 700;
-      position: relative;
-      display: inline-block;
-      text-transform: uppercase;
-    }
-    .sec-title::after {
-      content: '❖';
-      display: block;
-      color: var(--gold);
-      font-size: 12px;
-      margin-top: 4px;
-    }
-
-    /* SECTION 2: LỜI NGỎ */
-    .letter-card {
-      background: #fff;
-      border: 1px solid #e8e3d8;
-      border-radius: 16px;
-      padding: 30px 22px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-      position: relative;
-    }
-    .letter-card::before {
-      content: '“';
-      font-family: 'Playfair Display', serif;
-      font-size: 80px;
-      color: rgba(212, 175, 55, 0.2);
-      position: absolute;
-      top: -10px;
-      left: 15px;
-    }
-    .letter-salute {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 14px;
-      line-height: 1.6;
-    }
-    .letter-body {
-      font-size: 13.5px;
-      line-height: 1.85;
-      color: #4a525a;
-      text-align: justify;
-    }
-
-    /* SECTION 3: THỜI GIAN & ĐỊA ĐIỂM */
-    .info-card-box {
-      background: #fff;
-      border-radius: 16px;
-      padding: 24px;
-      border: 1px solid #e7efe9;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.04);
-      margin-bottom: 18px;
-    }
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      margin-bottom: 18px;
-    }
-    .info-item:last-child { margin-bottom: 0; }
-    .info-item-icon {
-      width: 40px;
-      height: 40px;
-      background: #eef6f1;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      font-size: 16px;
-      flex-shrink: 0;
-    }
-    .info-item-title { font-size: 12px; text-transform: uppercase; color: #88929b; font-weight: 700; margin-bottom: 3px; }
-    .info-item-desc { font-size: 14px; font-weight: 700; color: #23272e; line-height: 1.5; }
-
-    /* ACTION BUTTONS */
-    .action-btn-group {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 20px;
-    }
-    .act-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 13px 20px;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-radius: 30px;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .act-btn-map {
-      background: var(--primary);
-      color: #fff;
-    }
-    .act-btn-cal {
-      background: #fff;
-      color: var(--primary);
-      border: 1.5px solid var(--primary);
-    }
-
-    /* SECTION 4: CON SỐ NỔI BẬT */
-    .stats-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    .stat-pill {
-      background: #fff;
-      border-radius: 14px;
-      padding: 20px 14px;
-      text-align: center;
-      border: 1px solid #e6ede8;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.03);
-    }
-    .stat-pill-num {
-      font-family: 'Cinzel', serif;
-      font-size: 26px;
-      font-weight: 800;
-      color: var(--gold);
-    }
-    .stat-pill-label {
-      font-size: 11.5px;
-      color: #4b545c;
-      font-weight: 600;
-      margin-top: 5px;
-      line-height: 1.4;
-    }
-    .stat-full-note {
-      grid-column: span 2;
-      background: #eef6f1;
-      border-radius: 12px;
-      padding: 12px;
-      font-size: 12px;
-      color: var(--primary);
-      text-align: center;
-      font-weight: 600;
-    }
-
-    /* SECTION 5: TIMELINE */
-    .timeline-container {
-      position: relative;
-      padding-left: 30px;
-    }
-    .timeline-container::before {
-      content: '';
-      position: absolute;
-      left: 11px;
-      top: 10px;
-      bottom: 10px;
-      width: 2px;
-      background: #cbd8d0;
-    }
-    .timeline-step {
-      position: relative;
-      margin-bottom: 24px;
-    }
-    .timeline-step:last-child { margin-bottom: 0; }
-    .timeline-dot {
-      position: absolute;
-      left: -30px;
-      top: 0;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background: #fff;
-      border: 2px solid var(--primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      color: var(--primary);
-    }
-    .timeline-time-tag {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--primary-light);
-      letter-spacing: 0.5px;
-      margin-bottom: 3px;
-    }
-    .timeline-desc {
-      font-size: 13.5px;
-      color: #333a42;
-      line-height: 1.5;
-    }
-
-    /* SECTION 6: TINH THẦN FAIR PLAY */
-    .fairplay-box {
-      background: linear-gradient(145deg, #0d4624, #082d17);
-      color: #fff;
-      border-radius: 18px;
-      padding: 30px 22px;
-      text-align: center;
-      border: 1px solid var(--gold);
-    }
-    .fp-motto {
-      font-family: 'Cinzel', serif;
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--gold-light);
-      letter-spacing: 1px;
-      margin-bottom: 16px;
-      line-height: 1.5;
-    }
-    .fp-text {
-      font-size: 13px;
-      line-height: 1.7;
-      color: #d1e7da;
-    }
-
-    /* SECTION 7: SỔ LƯU BÚT & RSVP */
-    .guestbook-form {
-      background: #fff;
-      border-radius: 16px;
-      padding: 24px 20px;
-      border: 1px solid #e5e0d8;
-    }
-    .form-group { margin-bottom: 14px; text-align: left; }
-    .form-group label {
-      display: block;
-      font-size: 12px;
-      font-weight: 700;
-      color: #555;
-      margin-bottom: 6px;
-    }
-    .form-control {
-      width: 100%;
-      padding: 11px 14px;
-      border: 1px solid #d4ddd7;
-      border-radius: 10px;
-      font-family: inherit;
-      font-size: 13.5px;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .form-control:focus { border-color: var(--primary); }
-    .wishes-display {
-      margin-top: 20px;
-      max-height: 220px;
-      overflow-y: auto;
-      border-top: 1px dashed #d9d9d9;
-      padding-top: 14px;
-      text-align: left;
-    }
-    .wish-item {
-      background: #fbfbfb;
-      border-left: 3px solid var(--gold);
-      padding: 10px 12px;
-      margin-bottom: 10px;
-      border-radius: 0 8px 8px 0;
-    }
-    .wish-item-header {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--primary);
-    }
-    .wish-item-body {
-      font-size: 13px;
-      color: #444;
-      margin-top: 3px;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #05190e;
-      color: #8fa899;
-      font-size: 11.5px;
-      text-align: center;
-      padding: 35px 20px;
-      line-height: 1.7;
-    }
-    .foot-logo {
-      font-family: 'Cinzel', serif;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
-
-    /* ANIMATIONS */
-    @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
-      70% { transform: scale(1.08); box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
-      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
-    }
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @media (max-width: 480px) {
-      .music-player { right: 15px; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- BÌ THƯ MỞ ĐẦU (OPEN ENVELOPE THEME) -->
-  <div id="envelope-screen">
-    <div class="env-stamp">
-      <i class="fa-solid fa-futbol"></i>
-    </div>
-    <div class="env-sub">Trường TH & THCS 915 Gia Sàng</div>
-    <h1 class="env-title">THIỆP MỜI KHAI MẠC<br>GIẢI BÓNG ĐÁ HỌC SINH</h1>
-    <p style="font-size: 13px; color: #badfc6; max-width: 290px;">
-      Trân trọng kính mời Quý Thầy Cô, Quý Phụ huynh & các em Học sinh
-    </p>
-    <button class="env-btn" onclick="openInvitation()">
-      <i class="fa-regular fa-envelope-open"></i> Mở Thiệp Mời
-    </button>
-  </div>
-
-  <!-- NÚT ÂM THANH NỀN -->
-  <div class="music-player music-spin" id="musicBtn" onclick="toggleAudio()">
-    <i class="fa-solid fa-music" id="musicIcon"></i>
-  </div>
-  <!-- Audio còi trọng tài / nhạc hội thể thao -->
-  <audio id="bgAudio" loop preload="auto">
-    <source src="https://assets.mixkit.co/music/preview/mixkit-game-level-music-689.mp3" type="audio/mp3">
-  </audio>
-
-  <!-- NỘI DUNG THIỆP CHÍNH -->
-  <div class="wedding-wrapper">
-
-    <!-- 1. MÀN HÌNH COVER / HERO -->
-    <header class="hero-section">
-      <div class="hero-top-badge">Save The Date</div>
-      <div class="hero-organizer">Trường Tiểu học & THCS 915 Gia Sàng</div>
-      
-      <h1 class="hero-banner-title">THIỆP MỜI KHAI MẠC</h1>
-      <div class="hero-tournament-name">Giải Bóng Đá Học Sinh (Khối THCS)<br>Năm học 2026 – 2027</div>
-
-      <div class="hero-card-time">
-        <div class="time-val">07h15 | THỨ BẢY</div>
-        <div class="date-val">Ngày 10 tháng 10 năm 2026</div>
-      </div>
-
-      <!-- Đếm ngược ngày khai mạc -->
-      <div class="countdown-timer">
-        <div class="cd-box"><div class="cd-num" id="d">--</div><div class="cd-label">Ngày</div></div>
-        <div class="cd-box"><div class="cd-num" id="h">--</div><div class="cd-label">Giờ</div></div>
-        <div class="cd-box"><div class="cd-num" id="m">--</div><div class="cd-label">Phút</div></div>
-        <div class="cd-box"><div class="cd-num" id="s">--</div><div class="cd-label">Giây</div></div>
-      </div>
-    </header>
-
-    <!-- 2. LỜI NGỎ & Ý NGHĨA -->
-    <section class="sec-block">
-      <div class="sec-header">
-        <div class="sec-sub">About The Tournament</div>
-        <h2 class="sec-title">Lời Ngỏ Ban Tổ Chức</h2>
-      </div>
-
-      <div class="letter-card">
-        <div class="letter-salute">Kính gửi: Quý Thầy Cô giáo, Quý bậc Phụ huynh cùng toàn thể các em Học sinh thân mến!</div>
-        <p class="letter-body">
-          Thực hiện kế hoạch năm học 2026 – 2027 và phong trào rèn luyện thân thể theo gương Bác Hồ vĩ đại, Ban Tổ chức trân trọng kính mời Quý vị tới tham dự Lễ Khai mạc và cổ vũ cho các cầu thủ trẻ trong Giải bóng đá học sinh cấp THCS.<br><br>
-          Sự hiện diện và cổ vũ nhiệt tình của Quý phụ huynh, thầy cô và các bạn là nguồn động viên to lớn giúp các đội thi đấu tự tin, đoàn kết và cống hiến những pha bóng đẹp mắt nhất!
-        </p>
-      </div>
-    </section>
-
-    <!-- 3. THÔNG TIN THỜI GIAN & ĐỊA ĐIỂM -->
-    <section class="sec-block" style="background: #f4f8f5;">
-      <div class="sec-header">
-        <div class="sec-sub">Time & Location</div>
-        <h2 class="sec-title">Thời Gian & Địa Điểm</h2>
-      </div>
-
-      <div class="info-card-box">
-        <div class="info-item">
-          <div class="info-item-icon"><i class="fa-regular fa-clock"></i></div>
-          <div>
-            <div class="info-item-title">Thời gian khai mạc & Trận mở màn</div>
-            <div class="info-item-desc">07h15 | Thứ Bảy, 10/10/2026</div>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-item-icon"><i class="fa-solid fa-location-dot"></i></div>
-          <div>
-            <div class="info-item-title">Địa điểm tổ chức</div>
-            <div class="info-item-desc">Sân bóng cỏ nhân tạo Trường TH & THCS 915 Gia Sàng</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="action-btn-group">
-        <!-- Nút mở Google Maps đến trường -->
-        <a href="https://www.google.com/maps/search/?api=1&query=Trường+Tiểu+học+và+THCS+915+Gia+Sàng+Thái+Nguyên" target="_blank" class="act-btn act-btn-map">
-          <i class="fa-solid fa-map-location-dot"></i> Xem Vị Trí Trên Google Maps
-        </a>
-        
-        <!-- Nút lưu vào Google Calendar -->
-        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Lễ+Khai+Mạc+Giải+Bóng+Đá+THCS+915+Gia+Sàng&dates=20261010T001500Z/20261010T030000Z&details=Lễ+khai+mạc+và+các+trận+đấu+vòng+loại+mở+màn+Giải+bóng+đá+học+sinh+cấp+THCS.&location=Sân+bóng+đá+Trường+THCS+915+Gia+Sàng" target="_blank" class="act-btn act-btn-cal">
-          <i class="fa-regular fa-calendar-plus"></i> Lưu Vào Lịch Điện Thoại
-        </a>
-      </div>
-    </section>
-
-    <!-- 4. QUY MÔ GIẢI ĐẤU -->
-    <section class="sec-block">
-      <div class="sec-header">
-        <div class="sec-sub">Highlight Numbers</div>
-        <h2 class="sec-title">Quy Mô Giải Đấu</h2>
-      </div>
-
-      <div class="stats-row">
-        <div class="stat-pill">
-          <div class="stat-pill-num">25</div>
-          <div class="stat-pill-label">Đội bóng tranh tài<br><span style="font-size:10px; color:#777;">(K6: 7 | K7: 6 | K8: 6 | K9: 7)</span></div>
-        </div>
-        <div class="stat-pill">
-          <div class="stat-pill-num">250+</div>
-          <div class="stat-pill-label">Cầu thủ nhí<br>tham gia thi đấu</div>
-        </div>
-        <div class="stat-pill">
-          <div class="stat-pill-num">7v7</div>
-          <div class="stat-pill-label">Thể thức thi đấu<br>Bóng đá mini theo khối</div>
-        </div>
-        <div class="stat-pill">
-          <div class="stat-pill-num">40+</div>
-          <div class="stat-pill-label">Trận cầu hấp dẫn<br>xuyên suốt mùa giải</div>
-        </div>
-        <div class="stat-full-note">
-          <i class="fa-regular fa-calendar-check"></i> Toàn mùa giải: 10/10/2026 – 19/11/2026 (Chung kết & Bế mạc chào mừng Ngày Nhà giáo Việt Nam 20/11)
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. TIMELINE KHAI MẠC -->
-    <section class="sec-block" style="background: #fcfbf9;">
-      <div class="sec-header">
-        <div class="sec-sub">Event Program</div>
-        <h2 class="sec-title">Khung Chương Trình</h2>
-      </div>
-
-      <div class="timeline-container">
-        <div class="timeline-step">
-          <div class="timeline-dot"><i class="fa-solid fa-users"></i></div>
-          <div class="timeline-time-tag">07h00 – 07h15</div>
-          <div class="timeline-desc">Đón tiếp Đại biểu, Ban Giám hiệu, Quý phụ huynh, GVCN và 25 đội bóng tập kết đội ngũ.</div>
-        </div>
-
-        <div class="timeline-step">
-          <div class="timeline-dot"><i class="fa-solid fa-microphone"></i></div>
-          <div class="timeline-time-tag">07h15 – 07h30</div>
-          <div class="timeline-desc">
-            • Chào cờ, tuyên bố lý do & giới thiệu đại biểu.<br>
-            • Diễn văn khai mạc của Ban Giám hiệu / Ban Tổ chức.<br>
-            • Đại diện VĐV và Tổ Trọng tài tuyên thệ.
-          </div>
-        </div>
-
-        <div class="timeline-step">
-          <div class="timeline-dot"><i class="fa-solid fa-award"></i></div>
-          <div class="timeline-time-tag">07h30 – 07h45</div>
-          <div class="timeline-desc">Trao cờ lưu niệm, động viên tinh thần thi đấu của 25 chi đội bóng đá.</div>
-        </div>
-
-        <div class="timeline-step">
-          <div class="timeline-dot"><i class="fa-solid fa-futbol"></i></div>
-          <div class="timeline-time-tag">08h00</div>
-          <div class="timeline-desc">Chính thức khởi tranh các trận đấu vòng loại mở màn của các khối lớp!</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. FAIR-PLAY CODE -->
-    <section class="sec-block">
-      <div class="fairplay-box">
-        <div style="font-size: 24px; color: var(--gold); margin-bottom: 8px;">⚽ 🏆 🤝</div>
-        <div class="fp-motto">“Nhiệt huyết – Trung thực – Đoàn kết – Cao thượng”</div>
-        <p class="fp-text">
-          Ban Tổ chức mong muốn các bậc phụ huynh và khán giả cùng lan tỏa văn hóa cổ vũ văn minh: tôn trọng đối thủ, chấp hành quyết định của trọng tài và chung tay giữ gìn vệ sinh khuôn viên sân bãi trường học.
-        </p>
-      </div>
-    </section>
-
-    <!-- 7. TƯƠNG TÁC (RSVP & LƯU BÚT) -->
-    <section class="sec-block" style="background: #f6faf7;">
-      <div class="sec-header">
-        <div class="sec-sub">RSVP & Guestbook</div>
-        <h2 class="sec-title">Gửi Lời Chúc & Xác Nhận</h2>
-      </div>
-
-      <div class="guestbook-form">
-        <div class="form-group">
-          <label>Họ và tên của bạn:</label>
-          <input type="text" id="guestName" class="form-control" placeholder="Ví dụ: Phụ huynh em Tuấn Kiệt (Lớp 7A1)">
-        </div>
-
-        <div class="form-group">
-          <label>Bạn sẽ đến tham dự cổ vũ chứ?</label>
-          <select id="rsvpStatus" class="form-control">
-            <option value="Chắc chắn tham gia cổ vũ">Chắc chắn tham gia cổ vũ</option>
-            <option value="Sẽ sắp xếp tham gia">Sẽ sắp xếp tham gia</option>
-            <option value="Cổ vũ từ xa cho các con">Cổ vũ từ xa cho các con</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Lời chúc tiếp lửa cho các cầu thủ:</label>
-          <textarea id="guestMsg" class="form-control" rows="3" placeholder="Chúc các con thi đấu tự tin, đoàn kết và mang về chiến thắng!"></textarea>
-        </div>
-
-        <button class="act-btn act-btn-map" style="width:100%; border:none; cursor:pointer;" onclick="submitGuestbook()">
-          <i class="fa-solid fa-paper-plane"></i> Gửi Xác Nhận & Lời Chúc
-        </button>
-
-        <!-- Khung hiển thị lời chúc tương tác -->
-        <div class="wishes-display" id="wishesBox">
-          <div class="wish-item">
-            <div class="wish-item-header">Ban Giám Hiệu Trường 915 Gia Sàng</div>
-            <div class="wish-item-body">Chúc ngày hội bóng đá thành công rực rỡ, các con thi đấu hết mình vì màu cờ sắc áo của chi đội!</div>
-          </div>
-          <div class="wish-item">
-            <div class="wish-item-header">Phụ huynh lớp 9A2</div>
-            <div class="wish-item-body">Chúc các chàng trai 9A2 thi đấu kiên cường và gặt hái cúp vô địch nhé!</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      <div class="foot-logo">TRƯỜNG TIỂU HỌC & THCS 915 GIA SÀNG</div>
-      <p>Tổ Giáo Dục Thể Chất - Nghệ Thuật - Đội TNTP Hồ Chí Minh</p>
-      <p style="margin-top: 10px; font-size: 10px; color: #5a7565;">Thiệp mời điện tử phát hành năm học 2026 – 2027</p>
-    </footer>
-
-  </div>
-
-  <script>
-    // 1. Mở phong bì & Tự động bật nhạc
-    function openInvitation() {
-      const envelope = document.getElementById('envelope-screen');
-      envelope.classList.add('opened');
-      
-      const audio = document.getElementById('bgAudio');
-      audio.play().catch(e => {
-        console.log("Trình duyệt chặn autoplay âm thanh.");
-      });
-    }
-
-    // 2. Điều khiển phát / tạm dừng nhạc
-    let isPlaying = true;
-    function toggleAudio() {
-      const audio = document.getElementById('bgAudio');
-      const btn = document.getElementById('musicBtn');
-      const icon = document.getElementById('musicIcon');
-      
-      if (audio.paused) {
-        audio.play();
-        btn.classList.add('music-spin');
-        icon.className = 'fa-solid fa-music';
-      } else {
-        audio.pause();
-        btn.classList.remove('music-spin');
-        icon.className = 'fa-solid fa-volume-xmark';
-      }
-    }
-
-    // 3. Đếm ngược thời gian tới 07h15 ngày 10/10/2026
-    const targetDate = new Date('2026-10-10T07:15:00').getTime();
-    function runCountdown() {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      if (distance <= 0) {
-        document.getElementById('d').innerText = '00';
-        document.getElementById('h').innerText = '00';
-        document.getElementById('m').innerText = '00';
-        document.getElementById('s').innerText = '00';
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      document.getElementById('d').innerText = days < 10 ? '0' + days : days;
-      document.getElementById('h').innerText = hours < 10 ? '0' + hours : hours;
-      document.getElementById('m').innerText = minutes < 10 ? '0' + minutes : minutes;
-      document.getElementById('s').innerText = seconds < 10 ? '0' + seconds : seconds;
-    }
-    setInterval(runCountdown, 1000);
-    runCountdown();
-
-    // 4. Form gửi lời chúc & RSVP
-    function submitGuestbook() {
-      const name = document.getElementById('guestName').value.trim();
-      const rsvp = document.getElementById('rsvpStatus').value;
-      const msg = document.getElementById('guestMsg').value.trim();
-
-      if (!name) {
-        alert('Quý vị vui lòng để lại tên hoặc phụ huynh/học sinh lớp nào nhé!');
-        return;
-      }
-
-      const wishesBox = document.getElementById('wishesBox');
-      const newWish = document.createElement('div');
-      newWish.className = 'wish-item';
-      newWish.innerHTML = `
-        <div class="wish-item-header">${escapeHtml(name)} <span style="font-size:11px; font-weight:normal; color:#888;">(${rsvp})</span></div>
-        <div class="wish-item-body">${msg ? escapeHtml(msg) : 'Đã gửi lời chúc mừng khai mạc thành công!'}</div>
-      `;
-      wishesBox.prepend(newWish);
-
-      alert('Cảm ơn ' + name + ' đã xác nhận tham dự và tiếp lửa cho các cầu thủ trẻ!');
-      document.getElementById('guestName').value = '';
-      document.getElementById('guestMsg').value = '';
-    }
-
-    function escapeHtml(text) {
-      return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-    }
-  </script>
-</body>
-</html>
+      background: linear-gradient(180deg, rgba(18, 51, 61, 0.88) 0%, rgba(10, 31, 38, 0.96) 100%),
+                  url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80') center
