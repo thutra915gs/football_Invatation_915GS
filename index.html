@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thiệp Mời Khai Mạc - Giải Bóng Đá THCS 915 Gia Sàng</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #0b1a13;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .mobile-container {
+      width: 100%;
+      max-width: 450px;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      position: relative;
+      overflow-x: hidden;
+    }
+    /* Section 1: Hero Cover */
+    .hero {
+      background: linear-gradient(rgba(10, 46, 27, 0.8), rgba(6, 33, 19, 0.95)),
+                  url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80') center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255, 215, 0, 0.2);
+      border: 1px solid #ffd700;
+      color: #ffd700;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .school-name {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: #cfebd8;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.3;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .sub-year {
+      font-size: 16px;
+      color: #ffd700;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    .invitation-badge {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(5px);
+      border: 1px dashed rgba(255,255,255,0.3);
+      padding: 12px 20px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    .invitation-badge p:first-child { font-size: 11px; color: #a3e6be; text-transform: uppercase; letter-spacing: 1px; }
+    .invitation-badge p:last-child { font-size: 15px; font-weight: 700; color: #fff; margin-top: 3px; }
+
+    /* Countdown */
+    .countdown-box {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .count-item {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255,215,0,0.3);
+      border-radius: 8px;
+      padding: 8px 10px;
+      min-width: 60px;
+    }
+    .count-num { font-size: 18px; font-weight: 700; color: #ffd700; }
+    .count-label { font-size: 10px; color: #cfebd8; text-transform: uppercase; }
+
+    /* Section Styling */
+    .section {
+      padding: 35px 25px;
+      text-align: center;
+    }
+    .section-title {
+      font-size: 19px;
+      font-weight: 800;
+      color: #0e3d23;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: #ffd700;
+      margin: 8px auto 0;
+      border-radius: 2px;
+    }
+    .intro-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #444;
+      margin-top: 15px;
+      text-align: justify;
+    }
+
+    /* Event Card */
+    .info-card {
+      background: #f7faf8;
+      border: 1px solid #dceede;
+      border-radius: 16px;
+      padding: 22px 18px;
+      margin-top: 20px;
+      text-align: left;
+    }
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .info-row:last-child { margin-bottom: 0; }
+    .info-icon {
+      font-size: 20px;
+      margin-right: 14px;
+      margin-top: 2px;
+    }
+    .info-content h4 { font-size: 14px; color: #0e3d23; font-weight: 700; margin-bottom: 2px; }
+    .info-content p { font-size: 13px; color: #555; line-height: 1.5; }
+
+    /* Highlight Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .stat-card {
+      background: #0e3d23;
+      color: #fff;
+      padding: 16px;
+      border-radius: 12px;
+    }
+    .stat-num { font-size: 24px; font-weight: 800; color: #ffd700; }
+    .stat-text { font-size: 11px; color: #c4e9d1; margin-top: 4px; text-transform: uppercase; }
+
+    /* Timeline */
+    .timeline {
+      margin-top: 25px;
+      position: relative;
+      text-align: left;
+      padding-left: 20px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px;
+      top: 5px;
+      bottom: 5px;
+      width: 2px;
+      background: #d0e7d7;
+    }
+    .time-item {
+      position: relative;
+      margin-bottom: 22px;
+      padding-left: 20px;
+    }
+    .time-item::before {
+      content: '⚽';
+      font-size: 12px;
+      position: absolute;
+      left: -20px;
+      top: 0px;
+      background: #fff;
+    }
+    .time-tag { font-size: 12px; font-weight: 700; color: #167a42; }
+    .time-desc { font-size: 13px; font-weight: 600; color: #222; margin-top: 2px; }
+
+    /* Button */
+    .btn {
+      display: block;
+      width: 100%;
+      background: #167a42;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 14px;
+      border-radius: 30px;
+      margin-top: 20px;
+      box-shadow: 0 4px 15px rgba(22, 122, 66, 0.3);
+      border: none;
+      cursor: pointer;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, #f39c12, #f1c40f);
+      color: #000;
+      box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+    }
+
+    /* Wish Box */
+    .wish-box {
+      background: #fdfaf2;
+      border: 1px dashed #e6bb60;
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 20px;
+      text-align: left;
+    }
+    .wish-box input, .wish-box textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #d4c19c;
+      border-radius: 8px;
+      margin-top: 8px;
+      margin-bottom: 12px;
+      font-family: inherit;
+      font-size: 13px;
+    }
+
+    /* Footer */
+    footer {
+      background: #092314;
+      color: #8bbfa1;
+      font-size: 11px;
+      padding: 30px 20px;
+      text-align: center;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-container">
+    <!-- Hero Cover -->
+    <div class="hero">
+      <div class="badge">Official Invitation</div>
+      <div class="school-name">Trường TH & THCS 915 Gia Sàng</div>
+      <h1 class="hero-title">Lễ Khai Mạc<br>Giải Bóng Đá Nam</h1>
+      <div class="sub-year">Khối THCS • Năm học 2026 - 2027</div>
+
+      <div class="invitation-badge">
+        <p>Trân trọng kính mời</p>
+        <p>Quý Thầy Cô, Phụ Huynh & Học Sinh</p>
+      </div>
+
+      <div class="countdown-box">
+        <div class="count-item"><div class="count-num" id="days">--</div><div class="count-label">Ngày</div></div>
+        <div class="count-item"><div class="count-num" id="hours">--</div><div class="count-label">Giờ</div></div>
+        <div class="count-item"><div class="count-num" id="minutes">--</div><div class="count-label">Phút</div></div>
+        <div class="count-item"><div class="count-num" id="seconds">--</div><div class="count-label">Giây</div></div>
+      </div>
+    </div>
+
+    <!-- Letter Section -->
+    <div class="section">
+      <div class="section-title">Thư Mời Tham Dự</div>
+      <p class="intro-text">
+        Nhằm duy trì và đẩy mạnh phong trào thể dục thể thao, nâng cao thể lực và thắt chặt tình đoàn kết giữa các chi đội, 
+        Ban Tổ chức trân trọng kính mời Quý Thầy Cô, Quý Cha Mẹ học sinh và toàn thể các em đến cổ vũ tinh thần cho các cầu thủ trẻ trong ngày hội khai màn mùa giải mới!
+      </p>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">25</div>
+          <div class="stat-text">Đội bóng (Khối 6, 7, 8, 9)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">250+</div>
+          <div class="stat-text">Cầu thủ tranh tài</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Time & Location -->
+    <div class="section" style="background: #fbfdfc;">
+      <div class="section-title">Thời Gian & Địa Điểm</div>
+
+      <div class="info-card">
+        <div class="info-row">
+          <div class="info-icon">⏰</div>
+          <div class="info-content">
+            <h4>Thời gian khai mạc</h4>
+            <p><strong>07h15</strong> | Thứ Bảy, Ngày <strong>10/10/2026</strong></p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">📍</div>
+          <div class="info-content">
+            <h4>Địa điểm thi đấu</h4>
+            <p>Sân bóng đá cỏ nhân tạo<br>Trường Tiểu học & THCS 915 Gia Sàng</p>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🏆</div>
+          <div class="info-content">
+            <h4>Quy mô giải</h4>
+            <p>Bóng đá 7 người theo khối lớp (Khai mạc 10/10 - Chung kết 19/11/2026)</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://maps.google.com" target="_blank" class="btn">📍 Xem Vị Trí Trên Google Maps</a>
+    </div>
+
+    <!-- Schedule Timeline -->
+    <div class="section">
+      <div class="section-title">Chương Trình Khai Mạc</div>
+      <div class="timeline">
+        <div class="time-item">
+          <div class="time-tag">07:00 - 07:15</div>
+          <div class="time-desc">Đón tiếp Đại biểu, Phụ huynh và tập kết 25 đội bóng</div>
+        </div>
+        <div class="time-item">
+          <div class="time-tag">07:15 - 07:30</div>
+          <div class="time-desc">Chào cờ, Diễn văn khai mạc & Đại diện VĐV/Trọng tài tuyên thệ</div>
+        </div>
+        <div class="time-item">
+          <div class="time-tag">07:30 - 07:45</div>
+          <div class="time-desc">Trao cờ lưu niệm và động viên tinh thần các đội bóng</div>
+        </div>
+        <div class="time-item">
+          <div class="time-tag">08:00</div>
+          <div class="time-desc">Khởi tranh các trận đấu vòng loại mở màn nghẹt thở</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cheer Box (Lời chúc) -->
+    <div class="section" style="background: #fbfdfc;">
+      <div class="section-title">Gửi Lời Chúc Đến Các Đội</div>
+      <div class="wish-box">
+        <label style="font-size: 12px; font-weight: 700; color: #555;">Họ và tên của bạn:</label>
+        <input type="text" id="senderName" placeholder="Ví dụ: Phụ huynh em Tuấn Kiệt (Lớp 7A1)...">
+        
+        <label style="font-size: 12px; font-weight: 700; color: #555;">Lời chúc tiếp lửa:</label>
+        <textarea id="senderMsg" rows="3" placeholder="Chúc các con thi đấu tự tin, đoàn kết và fair-play!"></textarea>
+        
+        <button class="btn btn-gold" onclick="sendWish()">💌 Gửi Lời Động Viên</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p style="font-weight: 700; color: #ffd700; margin-bottom: 5px;">TRƯỜNG TH & THCS 915 GIA SÀNG</p>
+      <p>Tổ Ngoại ngữ - GDTC - Nghệ thuật</p>
+      <p style="margin-top: 10px; font-size: 10px; color: #6d967f;">Nhiệt huyết • Trung thực • Đoàn kết • Cao thượng</p>
+    </footer>
+  </div>
+
+  <script>
+    // Đếm ngược tới 07h15 ngày 10/10/2026
+    const targetDate = new Date('2026-10-10T07:15:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('days').innerText = "00";
+        document.getElementById('hours').innerText = "00";
+        document.getElementById('minutes').innerText = "00";
+        document.getElementById('seconds').innerText = "00";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+      document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+      document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+      document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function sendWish() {
+      const name = document.getElementById('senderName').value;
+      if (!name) {
+        alert('Vui lòng nhập tên của bạn nhé!');
+        return;
+      }
+      alert('Cảm ơn ' + name + ' đã gửi lời chúc tiếp lửa cho giải đấu!');
+      document.getElementById('senderName').value = '';
+      document.getElementById('senderMsg').value = '';
+    }
+  </script>
+</body>
+</html>
+```[cite: 1, 2, 3, 4]
