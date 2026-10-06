@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Thiệp Mời Khai Mạc - Giải Bóng Đá THCS 915 Gia Sàng</title>
-  <!-- Google Fonts & FontAwesome -->
+  <!-- Google Fonts hỗ trợ 100% tiếng Việt -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
@@ -72,7 +72,6 @@
       opacity: 0;
       pointer-events: none;
     }
-    /* Họa tiết đường chéo màu trường ở mép trên */
     .env-stripe-deco {
       position: absolute;
       top: 0; left: 0; right: 0;
@@ -94,20 +93,20 @@
     .env-stamp i { font-size: 38px; color: var(--school-gold); }
     .env-sub {
       font-size: 13px;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--school-gold-light);
       margin-bottom: 12px;
       font-weight: 600;
     }
     .env-title {
-      font-family: 'Cinzel', serif;
-      font-size: 24px;
-      line-height: 1.4;
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      line-height: 1.35;
       font-weight: 700;
-      letter-spacing: 1px;
       color: #ffffff;
       margin-bottom: 20px;
+      text-transform: uppercase;
     }
     .env-btn {
       background: var(--gold-gradient);
@@ -117,7 +116,7 @@
       font-size: 14px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       border-radius: 35px;
       cursor: pointer;
       box-shadow: 0 8px 24px rgba(230, 132, 73, 0.45);
@@ -156,4 +155,508 @@
     /* SECTION 1: HERO COVER */
     .hero-section {
       background: linear-gradient(180deg, rgba(18, 51, 61, 0.88) 0%, rgba(10, 31, 38, 0.96) 100%),
-                  url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80') center
+                  url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80') center/cover;
+      color: #fff;
+      padding: 60px 24px 45px;
+      text-align: center;
+      position: relative;
+      border-bottom: 3.5px solid var(--school-orange);
+    }
+    .hero-top-badge {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--school-gold);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .hero-organizer {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #d1e7ef;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 22px;
+    }
+    .hero-banner-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      line-height: 1.3;
+      font-weight: 800;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .hero-tournament-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+    .hero-card-time {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(245, 176, 65, 0.4);
+      border-radius: 14px;
+      padding: 16px 20px;
+      backdrop-filter: blur(6px);
+      margin: 0 auto 25px;
+    }
+    .hero-card-time .time-val {
+      font-size: 17px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    .hero-card-time .date-val {
+      font-size: 14px;
+      color: var(--school-gold-light);
+      margin-top: 5px;
+      font-weight: 500;
+    }
+
+    /* COUNTDOWN */
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 25px;
+    }
+    .cd-box {
+      background: rgba(10, 31, 38, 0.65);
+      border: 1px solid rgba(230, 132, 73, 0.45);
+      border-radius: 10px;
+      padding: 9px 10px;
+      min-width: 62px;
+    }
+    .cd-num { font-size: 21px; font-weight: 800; color: var(--school-gold); }
+    .cd-label { font-size: 9px; text-transform: uppercase; color: #bad7e2; margin-top: 2px; }
+
+    /* TIÊU ĐỀ SECTION */
+    .sec-block {
+      padding: 45px 24px;
+      position: relative;
+    }
+    .sec-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .sec-sub {
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      color: var(--school-orange-deep);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--school-teal-dark);
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      text-transform: uppercase;
+    }
+    .sec-title::after {
+      content: '❖';
+      display: block;
+      color: var(--school-orange);
+      font-size: 12px;
+      margin-top: 4px;
+    }
+
+    /* SECTION 2: LỜI NGỎ */
+    .letter-card {
+      background: #ffffff;
+      border: 1px solid #e7ded0;
+      border-left: 4px solid var(--school-orange);
+      border-radius: 16px;
+      padding: 30px 22px;
+      box-shadow: 0 6px 22px rgba(18, 51, 61, 0.05);
+      position: relative;
+    }
+    .letter-card::before {
+      content: '“';
+      font-family: 'Playfair Display', serif;
+      font-size: 78px;
+      color: rgba(230, 132, 73, 0.22);
+      position: absolute;
+      top: -12px;
+      right: 20px;
+    }
+    .letter-salute {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--school-teal-dark);
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+    .letter-body {
+      font-size: 13.8px;
+      line-height: 1.85;
+      color: #3b464c;
+      text-align: justify;
+    }
+
+    /* SECTION 3: THỜI GIAN & ĐỊA ĐIỂM */
+    .info-card-box {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid #dbe8ed;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+      margin-bottom: 20px;
+    }
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+    .info-item:last-child { margin-bottom: 0; }
+    .info-item-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--school-teal-soft);
+      border: 1px solid #bed6df;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--school-teal);
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+    .info-item-title { font-size: 11.5px; text-transform: uppercase; color: #72828b; font-weight: 700; margin-bottom: 3px; }
+    .info-item-desc { font-size: 14.5px; font-weight: 700; color: var(--school-teal-dark); line-height: 1.5; }
+
+    /* ACTION BUTTONS */
+    .action-btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .act-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 20px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+    .act-btn-map {
+      background: var(--school-teal);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(47, 107, 128, 0.35);
+    }
+    .act-btn-map:hover { background: var(--school-teal-dark); }
+    .act-btn-cal {
+      background: #ffffff;
+      color: var(--school-orange-deep);
+      border: 2px solid var(--school-orange);
+    }
+    .act-btn-cal:hover { background: #fff5ee; }
+
+    /* SECTION 4: CON SỐ NỔI BẬT */
+    .stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .stat-pill {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 20px 14px;
+      text-align: center;
+      border: 1px solid #dce8ed;
+      box-shadow: 0 3px 14px rgba(18, 51, 61, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-pill::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--school-orange);
+    }
+    .stat-pill:nth-child(2)::before { background: var(--school-gold); }
+    .stat-pill:nth-child(3)::before { background: var(--school-teal-light); }
+    .stat-pill:nth-child(4)::before { background: var(--school-teal); }
+    .stat-pill-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--school-teal-dark);
+    }
+    .stat-pill-label {
+      font-size: 11.5px;
+      color: #4b5860;
+      font-weight: 600;
+      margin-top: 5px;
+      line-height: 1.4;
+    }
+    .stat-full-note {
+      grid-column: span 2;
+      background: var(--school-teal-soft);
+      border: 1px solid #c2dbe4;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 12.5px;
+      color: var(--school-teal-dark);
+      text-align: center;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    /* SECTION 5: TIMELINE */
+    .timeline-container {
+      position: relative;
+      padding-left: 32px;
+    }
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      left: 11px;
+      top: 10px;
+      bottom: 10px;
+      width: 2.5px;
+      background: #c3d9e2;
+    }
+    .timeline-step {
+      position: relative;
+      margin-bottom: 24px;
+    }
+    .timeline-step:last-child { margin-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -32px;
+      top: 0;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 2.5px solid var(--school-orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      color: var(--school-orange-deep);
+    }
+    .timeline-time-tag {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--school-teal);
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+    .timeline-desc {
+      font-size: 13.5px;
+      color: #344047;
+      line-height: 1.55;
+    }
+
+    /* SECTION 6: TINH THẦN FAIR PLAY - ĐÃ SỬA CHUẨN FONT TIẾNG VIỆT */
+    .fairplay-box {
+      background: linear-gradient(145deg, #133844, #0a2128);
+      color: #ffffff;
+      border-radius: 18px;
+      padding: 32px 22px;
+      text-align: center;
+      border: 1.5px solid var(--school-orange);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    }
+    .fp-motto {
+      font-family: 'Playfair Display', serif;
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--school-gold-light);
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+    .fp-text {
+      font-size: 13.2px;
+      line-height: 1.75;
+      color: #d2e4eb;
+    }
+
+    /* SECTION 7: SỔ LƯU BÚT & RSVP */
+    .guestbook-form {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px 20px;
+      border: 1px solid #dce7ec;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.03);
+    }
+    .form-group { margin-bottom: 15px; text-align: left; }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--school-teal-dark);
+      margin-bottom: 6px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid #d3e2e8;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 13.5px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-control:focus { border-color: var(--school-orange); }
+    .btn-submit-wish {
+      width: 100%;
+      background: linear-gradient(135deg, var(--school-orange), var(--school-orange-deep));
+      color: #ffffff;
+      border: none;
+      padding: 14px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(207, 104, 43, 0.35);
+      transition: opacity 0.2s;
+    }
+    .btn-submit-wish:hover { opacity: 0.95; }
+    .wishes-display {
+      margin-top: 20px;
+      max-height: 220px;
+      overflow-y: auto;
+      border-top: 1px dashed #d5e3e8;
+      padding-top: 15px;
+      text-align: left;
+    }
+    .wish-item {
+      background: var(--school-teal-soft);
+      border-left: 3.5px solid var(--school-orange);
+      padding: 11px 13px;
+      margin-bottom: 10px;
+      border-radius: 0 8px 8px 0;
+    }
+    .wish-item-header {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--school-teal-dark);
+    }
+    .wish-item-body {
+      font-size: 13px;
+      color: #3b464c;
+      margin-top: 3px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #091c22;
+      color: #8da4ae;
+      font-size: 11.5px;
+      text-align: center;
+      padding: 35px 20px;
+      line-height: 1.7;
+    }
+    .foot-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--school-gold);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    /* ANIMATIONS */
+    @keyframes envPulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 176, 65, 0.45); }
+      70% { transform: scale(1.08); box-shadow: 0 0 0 14px rgba(245, 176, 65, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 176, 65, 0); }
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 480px) {
+      .music-player { right: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BÌ THƯ MỞ ĐẦU (OPEN ENVELOPE THEME) -->
+  <div id="envelope-screen">
+    <div class="env-stripe-deco"></div>
+    <div class="env-stamp">
+      <i class="fa-solid fa-futbol"></i>
+    </div>
+    <div class="env-sub">Trường TH & THCS 915 Gia Sàng</div>
+    <h1 class="env-title">THIỆP MỜI KHAI MẠC<br>GIẢI BÓNG ĐÁ HỌC SINH</h1>
+    <p style="font-size: 13.5px; color: #c9e1ea; max-width: 300px; line-height: 1.6;">
+      Trân trọng kính mời Quý Thầy Cô, Quý Phụ huynh & các em Học sinh
+    </p>
+    <button class="env-btn" onclick="openInvitation()">
+      <i class="fa-regular fa-envelope-open"></i> Mở Thiệp Mời
+    </button>
+  </div>
+
+  <!-- NÚT ÂM THANH NỀN -->
+  <div class="music-player music-spin" id="musicBtn" onclick="toggleAudio()">
+    <i class="fa-solid fa-music" id="musicIcon"></i>
+  </div>
+  <audio id="bgAudio" loop preload="auto">
+    <source src="https://assets.mixkit.co/music/preview/mixkit-game-level-music-689.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- NỘI DUNG THIỆP CHÍNH -->
+  <div class="wedding-wrapper">
+
+    <!-- 1. MÀN HÌNH COVER / HERO -->
+    <header class="hero-section">
+      <div class="hero-top-badge">Save The Date</div>
+      <div class="hero-organizer">Trường Tiểu học & THCS 915 Gia Sàng</div>
+      
+      <h1 class="hero-banner-title">THIỆP MỜI KHAI MẠC</h1>
+      <div class="hero-tournament-name">Giải Bóng Đá Học Sinh (Khối THCS)<br>Năm học 2026 – 2027</div>
+
+      <div class="hero-card-time">
+        <div class="time-val">07h15 | THỨ BẢY</div>
+        <div class="date-val">Ngày 10 tháng 10 năm 2026</div>
+      </div>
+
+      <!-- Đếm ngược ngày khai mạc -->
+      <div class="countdown-timer">
+        <div class="cd-box"><div class="cd-num" id="d">--</div><div class="cd-label">Ngày</div></div>
+        <div class="cd-box"><div class="cd-num" id="h">--</div><div class="cd-label">Giờ</div></div>
+        <div class="cd-box"><div class="cd-num" id="m">--</div><div class="cd-label">Phút</div></div>
+        <div class="cd-box"><div class="cd-num" id="s">--</div><div class="cd-label">Giây</div></div>
+      </div>
+    </header>
+
+    <!-- 2. LỜI NGỎ & Ý NGHĨA -->
+    <section class="sec-block">
+      <div class="sec-header">
+        <div class="sec-sub">About The Tournament</div>
+        <h2 class="sec-title">Lời Ngỏ Ban Tổ Chức</h2>
+      </div>
+
+      <div class="letter-card">
+        <div class="letter-salute">Kính gửi: Quý Thầy Cô giáo, Quý bậc Phụ huynh cùng toàn thể các em Học sinh thân mến!</div>
+        <p class="letter-body">
+          Thực hiện kế hoạch năm học 2026 – 2027 và phong trào rèn luyện thân thể theo gương Bác Hồ vĩ đại, Ban Tổ chức trân trọng kính mời Quý vị tới tham dự Lễ Khai mạc và cổ vũ cho các cầu thủ trẻ trong Giải bóng đá học sinh cấp THCS.<br><br>
+          Sự hiện diện và cổ vũ nhiệt tình của Quý phụ huynh, thầy cô và các bạn là nguồn động viên to lớn giúp các đội thi đấu tự tin, đoàn kết và cống hiến những pha bóng đẹp mắt nhất!
+        </p>
+      </div>
